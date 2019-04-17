@@ -255,8 +255,8 @@ def main():
         os.makedirs(PARTICL_BINDIR)
 
     # 1. Download and verify the specified version of particl-core
-    downloadParticlCore()
-    extractParticlCore()
+    #downloadParticlCore()
+    #extractParticlCore()
 
     dataDirWasNone = False
     if dataDir is None:
@@ -286,7 +286,7 @@ def main():
         sys.stderr.write('Error: %s exists, exiting.' % (daemonConfFile))
         exit(1)
 
-    zmq_port = 207922 if chain == 'mainnet' else 208922
+    zmq_port = 20792 if chain == 'mainnet' else 20892
     with open(daemonConfFile, 'w') as fp:
         if chain != 'mainnet':
             fp.write(chain + '=1\n\n')
@@ -374,7 +374,7 @@ def main():
         'debug': True,
         'particlbindir': PARTICL_BINDIR,
         'particldatadir': dataDir,
-        'startheight': 200000,  # Set to a block height before the pool begins operating
+        'startheight': 100,  # Set to a block height before the pool begins operating
         'pooladdress': pool_stake_address,
         'rewardaddress': pool_reward_address,
         'zmqhost': 'tcp://127.0.0.1',

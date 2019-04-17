@@ -189,7 +189,7 @@ class StakePool():
             self.rpc_auth = fp.read()
 
         # Todo: read rpc port from .conf file
-        self.rpc_port = settings['rpcport'] if 'rpcport' in settings else (51735 if self.chain == 'mainnet' else 51935)
+        self.rpc_port = settings['rpcport'] if 'rpcport' in settings else (51755 if self.chain == 'mainnet' else 51955)
 
         self.upgradeDatabase(db_version)
 
